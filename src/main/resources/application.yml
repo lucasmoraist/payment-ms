@@ -1,3 +1,20 @@
 spring:
+  profiles:
+    active: ${PROFILE_ACTIVE:default}
   application:
     name: payment-ms
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${vcap.services.keycloak.credentials.issuer-uri}
+      client:
+        provider:
+          keycloak:
+            issuer-uri: ${vcap.services.keycloak.credentials.issuer-uri}
+        registration:
+          keycloak:
+            authorization-grant-type: ${vcap.services.keycloak.credentials.authorization-grant-type}
+            client-id: ${vcap.services.keycloak.credentials.client-id}
+            client-secret: ${vcap.services.keycloak.credentials.client-secret}
+            scope: openid

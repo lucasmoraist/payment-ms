@@ -10,8 +10,7 @@
     - [x] validar valor da transação (deve ser maior que zero)
     - [x] processar o pagamento (simular apenas lançando um log)
 3. Implementar security com OAuth2 para autenticação dos endpoints da API.
-    - [ ] criar classe de configuração de segurança
-    - [ ] configurar OAuth2 com token vindo do Keycloak
+    - [x] criar classe de configuração de segurança
 4. Implementar um endpoint para criar um novo pagamento, que deve:
     - [ ] receber os dados do pagamento via requisição HTTP POST
     - [ ] receber os dados em formato JSON
