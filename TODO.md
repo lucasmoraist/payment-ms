@@ -6,9 +6,9 @@
     - [x] data da transação
     - [x] forma de pagamento (cartão de crédito, boleto, pix)
 2. Implementar métodos na classe Pagamento para:
-    - [ ] validar se a data da transação não passada data atual ou futura
-    - [ ] validar valor da transação (deve ser maior que zero)
-    - [ ] processar o pagamento (simular apenas lançando um log)
+    - [x] validar se a data da transação não passada data atual ou futura
+    - [x] validar valor da transação (deve ser maior que zero)
+    - [x] processar o pagamento (simular apenas lançando um log)
 3. Implementar um endpoint para criar um novo pagamento, que deve:
     - [ ] receber os dados do pagamento via requisição HTTP POST
     - [ ] receber os dados em formato JSON
