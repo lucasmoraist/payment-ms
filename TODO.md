@@ -6,7 +6,6 @@
     - [x] data da transação
     - [x] forma de pagamento (cartão de crédito, boleto, pix)
 2. Implementar métodos na classe Pagamento para:
-    - [ ] validar o email do usuário
     - [ ] validar se a data da transação não passada data atual ou futura
     - [ ] validar valor da transação (deve ser maior que zero)
     - [ ] processar o pagamento (simular apenas lançando um log)
