@@ -1,10 +1,10 @@
 1. Criar uma classe Pagamento com os seguintes atributos:
-    - [ ] nome do usuário
-    - [ ] email do usuário
-    - [ ] valor da transação
-    - [ ] status do pagamento (pendente, concluído, falhado)
-    - [ ] data da transação
-    - [ ] forma de pagamento (cartão de crédito, boleto, pix)
+    - [x] nome do usuário
+    - [x] email do usuário
+    - [x] valor da transação
+    - [x] status do pagamento (pendente, concluído, falhado)
+    - [x] data da transação
+    - [x] forma de pagamento (cartão de crédito, boleto, pix)
 2. Implementar métodos na classe Pagamento para:
     - [ ] validar o email do usuário
     - [ ] validar se a data da transação não passada data atual ou futura
