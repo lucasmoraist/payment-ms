@@ -9,7 +9,10 @@
     - [x] validar se a data da transação não passada data atual ou futura
     - [x] validar valor da transação (deve ser maior que zero)
     - [x] processar o pagamento (simular apenas lançando um log)
-3. Implementar um endpoint para criar um novo pagamento, que deve:
+3. Implementar security com OAuth2 para autenticação dos endpoints da API.
+    - [ ] criar classe de configuração de segurança
+    - [ ] configurar OAuth2 com token vindo do Keycloak
+4. Implementar um endpoint para criar um novo pagamento, que deve:
     - [ ] receber os dados do pagamento via requisição HTTP POST
     - [ ] receber os dados em formato JSON
     - [ ] validar token gerado por OAuth2
@@ -17,20 +20,20 @@
     - [ ] validar a assinatura do payload
     - [ ] chamar os métodos de validação da classe Pagamento
     - [ ] retornar uma resposta JSON com o status do pagamento e uma mensagem apropriada
-4. Implementar tratamento de erros para:
+5. Implementar tratamento de erros para:
     - [ ] dados inválidos (email, valor, data)
     - [ ] falha na validação do token OAuth2
     - [ ] falha na validação da assinatura do payload
     - [ ] erros inesperados durante o processamento do pagamento
-5. Escrever testes unitários para:
+6. Escrever testes unitários para:
     - [ ] validar email
     - [ ] validar data da transação
     - [ ] validar valor da transação
     - [ ] processar pagamento
     - [ ] criar novo pagamento via endpoint HTTP
-6. Documentar a API criada, incluindo:
+7. Documentar a API criada, incluindo:
     - [ ] descrição dos endpoints
     - [ ] exemplos de requisições e respostas
     - [ ] códigos de status HTTP retornados
-    
+
 ps: Conforme você for avançando nas tarefas, marcar conclusões com [x].
