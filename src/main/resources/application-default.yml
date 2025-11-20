@@ -6,6 +6,3 @@ vcap:
     keycloak:
       credentials:
         issuer-uri: http://localhost:8082/realms/task_realm
-        authorization-grant-type: client_credentials
-        client-id: task-manager-dev # Deve ser alterado sempre que subir o Keycloak em um Container novo
-        client-secret: 4c3Q7Yx6X0h4b3iWYre8hzns1nbQYLUV  # Deve ser alterado sempre que subir o Keycloak em um Container novo
