@@ -12,13 +12,13 @@
 3. Implementar security com OAuth2 para autenticação dos endpoints da API.
     - [x] criar classe de configuração de segurança
 4. Implementar um endpoint para criar um novo pagamento, que deve:
-    - [ ] receber os dados do pagamento via requisição HTTP POST
-    - [ ] receber os dados em formato JSON
-    - [ ] validar token gerado por OAuth2
-    - [ ] receber o payload assinado com certificado RSA 3072 bits em base64
-    - [ ] validar a assinatura do payload
-    - [ ] chamar os métodos de validação da classe Pagamento
-    - [ ] retornar uma resposta JSON com o status do pagamento e uma mensagem apropriada
+    - [x] receber os dados do pagamento via requisição HTTP POST
+    - [x] receber os dados em formato JSON
+    - [x] validar token gerado por OAuth2
+    - [x] receber o payload assinado com certificado RSA 3072 bits em base64
+    - [x] validar a assinatura do payload
+    - [x] chamar os métodos de validação da classe Pagamento
+    - [x] retornar uma resposta JSON com o status do pagamento e uma mensagem apropriada
 5. Implementar tratamento de erros para:
     - [ ] dados inválidos (email, valor, data)
     - [ ] falha na validação do token OAuth2
