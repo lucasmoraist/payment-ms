@@ -1,6 +1,5 @@
 package com.lucasmoraist.payment_ms.infrastructure.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lucasmoraist.payment_ms.domain.exceptions.CertificateException;
 import com.lucasmoraist.payment_ms.infrastructure.service.CertificateService;
@@ -11,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.KeyFactory;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.Signature;
@@ -30,32 +28,27 @@ public class CertificateServiceImpl implements CertificateService {
     }
 
     @Override
-    public void validate(String payloadHash, Object request) {
+    public void validate(String payloadHash, Object payload) {
         if (payloadHash == null || payloadHash.isEmpty()) {
             throw new CertificateException("PayloadHash is null or empty");
         }
 
         try {
-            String json = objectMapper.writeValueAsString(request);
-            byte[] jsonBytes = json.getBytes(StandardCharsets.UTF_8);
-
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(jsonBytes);
-
-            byte[] signatureBytes = Base64.getDecoder().decode(payloadHash);
+            String payloadAsString = objectMapper.writeValueAsString(payload);
+            byte[] data = payloadAsString.getBytes(StandardCharsets.UTF_8);
 
             PublicKey publicKey = loadPublicKey();
 
-            Signature sig = Signature.getInstance("SHA256withRSA");
-            sig.initVerify(publicKey);
-            sig.update(hash);
+            Signature signature = Signature.getInstance("SHA256withRSA");
+            signature.initVerify(publicKey);
+            signature.update(data);
 
-            boolean valid = sig.verify(signatureBytes);
+            byte[] signatureBytes = Base64.getDecoder().decode(payloadHash);
+            boolean valid = signature.verify(signatureBytes);
 
             if (!valid) {
                 throw new CertificateException("Signature validation failed");
             }
-
         } catch (Exception e) {
             throw new CertificateException("Error validating payload", e);
         }
