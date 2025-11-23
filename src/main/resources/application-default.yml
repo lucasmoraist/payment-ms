@@ -1,8 +1,11 @@
 server:
-  port: 8080
+  port: 8083
 
 vcap:
   services:
     keycloak:
       credentials:
         issuer-uri: http://localhost:8082/realms/task_realm
+        authorization-grant-type: client_credentials
+        client-id: task-manager-dev # Deve ser alterado sempre que subir o Keycloak em um Container novo
+        client-secret: oCRcS5f7doRwa90fvZoiQcwk0uhWuO4q  # Deve ser alterado sempre que subir o Keycloak em um Container novo

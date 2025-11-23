@@ -12,3 +12,9 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${vcap.services.keycloak.credentials.issuer-uri}
+        registration:
+          keycloak:
+            authorization-grant-type: ${vcap.services.keycloak.credentials.authorization-grant-type}
+            client-id: ${vcap.services.keycloak.credentials.client-id}
+            client-secret: ${vcap.services.keycloak.credentials.client-secret}
+            scope: openid
